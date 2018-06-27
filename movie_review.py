@@ -62,5 +62,45 @@ classifier.show_most_informative_features(15)
 
 #accuracy 0.78
 
+#Saving the trained classifier instead of training again
+import pickle
+
+#wb is for writing in bytes
+save_classifier = open("NaiveBayes.pickle","wb")
+pickle.dumps(classifier, save_classifier)
+save_classifier.close()
+
+
+
+#Using the saved classsifier
+#read in bytes
+
+classsifier_f = open("NaiveBayes.pickle","rb")
+classifier1 = pickle.load(classifier_f)
+classifer_f.close()
+
+print("Naive Bayes' accuracy:",(nltk.classify.accuracy(classifier1, testing_set)))
+
+classifier1.show_most_informative_features(15)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
