@@ -123,7 +123,7 @@ class VoteClassifier(ClassifierI):
     
 voted_classifier = VoteClassifier(classifier,MNB_classifier,Bernoulli_classifier,LogisticRegression_classifier,SGD_Classifier,LinearSVC_classifier,NuSVC_classifier )
 
-print("VotedClassifier accuracy:",(nltk.classify.accuracy(voted_classifier, testing_set)))
+#print("VotedClassifier accuracy:",(nltk.classify.accuracy(voted_classifier, testing_set)))
 
 
 def sentiment(text):
@@ -132,7 +132,7 @@ def sentiment(text):
     return voted_classifier.classify(feats), voted_classifier.confidence(feats)
  
  
- 
+
  
  
  
